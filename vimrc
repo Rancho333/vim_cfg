@@ -8,10 +8,11 @@ set number
 filetype indent on
 "设置编辑时制表符占用空格数
 set tabstop=4
+"set autoindent
 "将制表符扩展为空格
-"set expandtab
+set expandtab
 "设置格式化时制表符占用空格数
-"set shiftwidth=4
+set shiftwidth=4
 "让vim把连续数量的空格视为一个制表符
 "set softtabstop=4
 "设置缩进线
@@ -29,14 +30,18 @@ set term=xterm
 colorscheme molokai
 set bg=dark
 set cursorline
-"highlight Cursorline   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+"highlight Cursorline   cterm=NONE ctermbg=236
+highlight Cursorline   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 set cursorcolumn
-"highlight Cursorcolumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+"highlight Cursorcolumn cterm=NONE ctermbg=236
+highlight Cursorcolumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 set laststatus=2
 "set search high light
 set hlsearch 
 "ignore casr sensitive
-set ignorecase
+
+"set ignorecase
+
 set t_Co=256      "在windows中用xshell连接打开vim可以显示色彩
 
 "解决vim中文显示乱码问题
@@ -64,7 +69,10 @@ nmap <Leader>q :q<CR>
 nmap <Leader>wq :w<CR>:q<CR>
 nmap <Leader>Q :q!<CR>
 
-"different vim copy/paste
+"copy/paste content in different files,usage:
+"1. use 'yy' to select which content you want to copy
+"2. use ';y' write this content to cache file
+"3. use ';p' to paste the content 
 let g:copy_file=$HOME . "/.vim_copybuffer"
 function Write_copy_file()
 call delete(g:copy_file)
@@ -124,7 +132,7 @@ Plug 'liuchengxu/eleline.vim'
 "switch from c file and h file
 Plug 'derekwyatt/vim-fswitch'
 Plug 'majutsushi/tagbar'
-"Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 "将asynctasks命令所在目录加入到PATH，然后在~/.bashrc alias task='asynctask -f'
 Plug 'skywind3000/asynctasks.vim'
 call plug#end()
