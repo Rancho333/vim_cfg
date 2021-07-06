@@ -6,4 +6,4 @@ autoload_cscope.vim可以自动配置加载cscope
 1. cp vimrc ~/.vimrc
 2. mkdir ~/.vim; cp -r autoload/ ~/.vim; cp -r colors/ ~/.vim; cp -r plugin ~/.vim
 3. vim ~/.vimrc   :PlugInstall
-4. cp bashrc ~/.bashrc
+4. cp bashrc ~/.bashrc       # please noter: source ~/.bashrc
