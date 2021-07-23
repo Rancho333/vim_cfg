@@ -84,6 +84,8 @@ export NVM_DIR="$HOME/.nvm"
 
 #export http_proxy=http://10.204.112.11:3128
 #export https_proxy=http://10.204.112.11:3128
+#export http_proxy="http://cn62008387:gdssae_000432@10.204.28.89:9090/"
+#export https_proxy="http://cn62008387:gdssae_000432@10.204.28.89:9090/"
 
 # Set colors for man pages
 man() {
