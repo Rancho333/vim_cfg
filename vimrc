@@ -135,6 +135,7 @@ Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 "将asynctasks命令所在目录加入到PATH，然后在~/.bashrc alias task='asynctask -f'
 Plug 'skywind3000/asynctasks.vim'
+Plug 'mtdl9/vim-log-highlighting'
 call plug#end()
 
 hi comment ctermfg=6
