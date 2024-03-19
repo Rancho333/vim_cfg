@@ -7,5 +7,6 @@ Use manual：
 2. mkdir ~/.vim; cp -r autoload/ ~/.vim; cp -r colors/ ~/.vim; cp -r plugin ~/.vim
 3. vim ~/.vimrc   :PlugInstall
 4. cp bashrc ~/.bashrc       # please noter: source ~/.bashrc
+5. For install plugin, open any files and execute ":PlugInstall"
 
 Or direct run auto_shell.sh
