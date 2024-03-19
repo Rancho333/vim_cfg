@@ -66,6 +66,7 @@ let mapleader=";"
 
 "define shortcut key to quit, write/quit, no-save/quit
 nmap <Leader>q :q<CR>
+nmap <Leader>w :w<CR>
 nmap <Leader>wq :w<CR>:q<CR>
 nmap <Leader>Q :q!<CR>
 
@@ -94,7 +95,7 @@ map <silent> nt :NERDTreeMirror<CR>
 map <silent> nt :NERDTreeToggle<CR>
 let NERDTreeWinPos="right"
 let NERDTreeShowBookmarks=1
-"autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree             "auto enable nerdtree when open file via vim
 
 "tagbar, * 打开所有folds, = 折叠所有folds
 nmap <silent> tb :TagbarToggle<CR>  
@@ -110,6 +111,7 @@ nmap <silent> <Leader>sw :FSHere<CR>
 "let g:Lf_ShortcutF = '<c-p>'
 let g:Lf_ShortcutB = '<m-n>'
 noremap <c-n> :LeaderfMru<cr>
+"display functions list in this file
 noremap <c-p> :LeaderfFunction!<cr>
 noremap <m-n> :LeaderfBuffer<cr>
 noremap <m-m> :LeaderfTag<cr>
@@ -123,7 +125,7 @@ let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'eleline'
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
-"vim-plug management 
+"vim-plug management               "PlugInstall to install all plugins, PlugUpgrade to update all plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tomasr/molokai'
