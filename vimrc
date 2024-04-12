@@ -58,7 +58,7 @@ set tags=./.tags;,.tags
 
 "光标回到上次退出文件时的位置
 if has("autocmd")
-        au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 "define Leader as ;
@@ -69,6 +69,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>wq :w<CR>:q<CR>
 nmap <Leader>Q :q!<CR>
+nmap <Leader>s :shell<CR>
 
 "copy/paste content in different files,usage:
 "1. use 'yy' to select which content you want to copy
