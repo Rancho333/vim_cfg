@@ -58,7 +58,7 @@ set tags=./.tags;,.tags
 
 "光标回到上次退出文件时的位置
 if has("autocmd")
-        au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 "define Leader as ;
@@ -66,8 +66,10 @@ let mapleader=";"
 
 "define shortcut key to quit, write/quit, no-save/quit
 nmap <Leader>q :q<CR>
+nmap <Leader>w :w<CR>
 nmap <Leader>wq :w<CR>:q<CR>
 nmap <Leader>Q :q!<CR>
+nmap <Leader>s :shell<CR>
 
 "copy/paste content in different files,usage:
 "1. use 'yy' to select which content you want to copy
@@ -94,7 +96,7 @@ map <silent> nt :NERDTreeMirror<CR>
 map <silent> nt :NERDTreeToggle<CR>
 let NERDTreeWinPos="right"
 let NERDTreeShowBookmarks=1
-"autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree             "auto enable nerdtree when open file via vim
 
 "tagbar, * 打开所有folds, = 折叠所有folds
 nmap <silent> tb :TagbarToggle<CR>  
@@ -110,6 +112,7 @@ nmap <silent> <Leader>sw :FSHere<CR>
 "let g:Lf_ShortcutF = '<c-p>'
 let g:Lf_ShortcutB = '<m-n>'
 noremap <c-n> :LeaderfMru<cr>
+"display functions list in this file
 noremap <c-p> :LeaderfFunction!<cr>
 noremap <m-n> :LeaderfBuffer<cr>
 noremap <m-m> :LeaderfTag<cr>
@@ -123,12 +126,17 @@ let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'eleline'
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
-"vim-plug management 
+" ALE configuration
+"let g:ale_c_cc_executable = 'gcc'     " change c and c++ linter from clang to gcc
+"let g:ale_c_cc_options = '-I/home/rancho/workdir/questone2av2/q2av2-pr/src/sonic-frr/frr/lib'      " manually add header files PATH
+
+"vim-plug management               "PlugInstall to install all plugins, PlugUpgrade to update all plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tomasr/molokai'
-"support laststatus
+"status line for vim
 Plug 'liuchengxu/eleline.vim'
+"Plug 'vim-airline/vim-airline'
 "switch from c file and h file
 Plug 'derekwyatt/vim-fswitch'
 Plug 'majutsushi/tagbar'
@@ -136,6 +144,10 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 "将asynctasks命令所在目录加入到PATH，然后在~/.bashrc alias task='asynctask -f'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'mtdl9/vim-log-highlighting'
+" linting for syntax checking and semantic error
+Plug 'dense-analysis/ale'
+" display vertical line on each indentation
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 hi comment ctermfg=6
