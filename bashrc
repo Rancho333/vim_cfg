@@ -67,6 +67,12 @@ alias ln='ln -i'
 
 alias c='clear'
 
+#simply the cmd of cscope
+alias cs='cscope -Rbqk -P'
+
+#simply the cmd ctags
+alias ct='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q;mv tags .tags'
+
 #alias ctags='~/workdir/universal-ctags/ctags'
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'

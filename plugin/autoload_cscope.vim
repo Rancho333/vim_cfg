@@ -174,10 +174,12 @@ endfunc
 " auto toggle the menu
 augroup autoload_cscope
  au!
- au BufEnter *.[chly]  call <SID>Cycle_csdb() | call <SID>Cycle_macros_menus()
+ au BufEnter *.[chly]  call <SID>Cycle_csdb() | call <SID>Cycle_macros_menus()        " when open file type as *.c *.h *.l and *.y, auto execute function of Cycle_csdb and Cycle_macros_menus
  au BufEnter *.cc      call <SID>Cycle_csdb() | call <SID>Cycle_macros_menus()
+ au BufEnter *.cpp      call <SID>Cycle_csdb() | call <SID>Cycle_macros_menus()       " add support auto load cscope for cpp project
  au BufUnload *.[chly] call <SID>Unload_csdb() | call <SID>Cycle_macros_menus()
  au BufUnload *.cc     call <SID>Unload_csdb() | call <SID>Cycle_macros_menus()
+ au BufUnload *.cpp     call <SID>Unload_csdb() | call <SID>Cycle_macros_menus()
 augroup END
 
 let &cpo = s:save_cpo

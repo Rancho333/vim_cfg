@@ -126,10 +126,13 @@ let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'eleline'
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
+<<<<<<< HEAD
 " ALE configuration
 "let g:ale_c_cc_executable = 'gcc'     " change c and c++ linter from clang to gcc
 "let g:ale_c_cc_options = '-I/home/rancho/workdir/questone2av2/q2av2-pr/src/sonic-frr/frr/lib'      " manually add header files PATH
 
+=======
+>>>>>>> 15c353a9259d597176206d0e4d5e8b1d36bf6e23
 "vim-plug management               "PlugInstall to install all plugins, PlugUpgrade to update all plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
