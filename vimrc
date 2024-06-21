@@ -15,10 +15,8 @@ set expandtab
 set shiftwidth=4
 "让vim把连续数量的空格视为一个制表符
 "set softtabstop=4
-"设置缩进线
-"set list lcs=tab:\|\ "(here is a space)
-"set foldmethod=syntax
-"set nofoldenable
+"set search high light
+set hlsearch
 
 "<F12>按键绑定粘贴模式 :set paste
 set pastetoggle=<F12>
@@ -28,7 +26,7 @@ set term=xterm
 
 " set color scheme
 "colorscheme darkblue
-"colorscheme desert
+"colorscheme molokai
 autocmd vimenter * ++nested colorscheme gruvbox
 set bg=dark
 
@@ -42,11 +40,6 @@ highlight Cursorcolumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=N
 
 "never display vim status bar in the end, no need
 set laststatus=0
-"set search high light
-set hlsearch 
-"ignore casr sensitive
-
-"set ignorecase
 
 set t_Co=256      "在windows中用xshell连接打开vim可以显示色彩
 
@@ -77,6 +70,7 @@ nmap <Leader>wq :w<CR>:q<CR>
 nmap <Leader>Q :q!<CR>
 nmap <Leader>s :shell<CR>
 
+
 "copy/paste content in different files,usage:
 "1. use 'yy' to select which content you want to copy
 "2. use ';y' write this content to cache file
@@ -96,6 +90,7 @@ endfunction
 
 map <silent> ;y :call Write_copy_file()<Enter>
 map <silent> ;p :call Read_copy_file()<Enter>         
+
 
 "nerdtree configuration
 map <silent> nt :NERDTreeMirror<CR>
