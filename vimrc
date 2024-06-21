@@ -20,21 +20,28 @@ set shiftwidth=4
 "set foldmethod=syntax
 "set nofoldenable
 
-"<F5>按键绑定粘贴模式 :set paste
+"<F12>按键绑定粘贴模式 :set paste
 set pastetoggle=<F12>
 syntax enable
 syntax on
 set term=xterm
+
+" set color scheme
 "colorscheme darkblue
 "colorscheme desert
-colorscheme molokai
+"colorscheme molokai
+autocmd vimenter * ++nested colorscheme gruvbox
 set bg=dark
+
+
 set cursorline
 "highlight Cursorline   cterm=NONE ctermbg=236
 highlight Cursorline   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 set cursorcolumn
 "highlight Cursorcolumn cterm=NONE ctermbg=236
 highlight Cursorcolumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+
+" always display vim status bar in the end
 set laststatus=2
 "set search high light
 set hlsearch 
@@ -148,4 +155,5 @@ Plug 'mtdl9/vim-log-highlighting'
 Plug 'dense-analysis/ale'
 " display vertical line on each indentation
 Plug 'Yggdroot/indentLine'
+Plug 'morhetz/gruvbox'
 call plug#end()
