@@ -62,7 +62,7 @@ if has("autocmd")
 endif
 
 "define Leader as ;
-let mapleader=";"
+let mapleader=" "
 
 "define shortcut key to quit, write/quit, no-save/quit
 nmap <Leader>q :q<CR>
@@ -149,5 +149,3 @@ Plug 'dense-analysis/ale'
 " display vertical line on each indentation
 Plug 'Yggdroot/indentLine'
 call plug#end()
-
-hi comment ctermfg=6
