@@ -41,8 +41,8 @@ set cursorcolumn
 "highlight Cursorcolumn cterm=NONE ctermbg=236
 highlight Cursorcolumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
-" always display vim status bar in the end
-set laststatus=2
+"never display vim status bar in the end, no need
+set laststatus=0
 "set search high light
 set hlsearch 
 "ignore casr sensitive
@@ -141,9 +141,6 @@ let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tomasr/molokai'
-"status line for vim
-Plug 'liuchengxu/eleline.vim'
-"Plug 'vim-airline/vim-airline'
 "switch from c file and h file
 Plug 'derekwyatt/vim-fswitch'
 Plug 'majutsushi/tagbar'
