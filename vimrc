@@ -29,7 +29,6 @@ set term=xterm
 " set color scheme
 "colorscheme darkblue
 "colorscheme desert
-"colorscheme molokai
 autocmd vimenter * ++nested colorscheme gruvbox
 set bg=dark
 
@@ -140,7 +139,6 @@ let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 "vim-plug management               "PlugInstall to install all plugins, PlugUpgrade to update all plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tomasr/molokai'
 "switch from c file and h file
 Plug 'derekwyatt/vim-fswitch'
 Plug 'majutsushi/tagbar'
