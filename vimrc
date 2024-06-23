@@ -131,6 +131,14 @@ let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 "let g:ale_c_cc_executable = 'gcc'     " change c and c++ linter from clang to gcc
 "let g:ale_c_cc_options = '-I/home/rancho/workdir/questone2av2/q2av2-pr/src/sonic-frr/frr/lib'      " manually add header files PATH
 
+" AirLine configuration
+" diaplay tab line on the top :b buffer_number to change buffer
+let g:airline#extensions#tabline#enabled=1
+" display buffer sequences
+let g:airline#extensions#tabline#buffer_nr_show=1
+" disable status line at the button of window
+let g:airline_disable_statusline = 1
+
 "vim-plug management               "PlugInstall to install all plugins, PlugUpgrade to update all plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -138,12 +146,6 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'derekwyatt/vim-fswitch'
 Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-"将asynctasks命令所在目录加入到PATH，然后在~/.bashrc alias task='asynctask -f'
-Plug 'skywind3000/asynctasks.vim'
-Plug 'mtdl9/vim-log-highlighting'
-" linting for syntax checking and semantic error
-Plug 'dense-analysis/ale'
-" display vertical line on each indentation
-Plug 'Yggdroot/indentLine'
 Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
 call plug#end()
