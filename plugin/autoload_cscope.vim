@@ -2,7 +2,7 @@
 " Last Change: Wed Jan 26 10:28:52 Jerusalem Standard Time 2011
 " Maintainer: Michael Conrad Tadpol Tilsra <tadpol@tadpol.org>
 " Revision: 0.5
-
+"
 if exists("loaded_autoload_cscope")
 	finish
 endif
@@ -79,8 +79,8 @@ function s:Cycle_macros_menus()
     set csto=0
     set cst
     silent! map <unique> <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-    silent! map <unique> <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-    silent! map <unique> <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+    silent! map <unique> <C-\>d :cs find g <C-R>=expand("<cword>")<CR><CR>
+    silent! map <unique> <C-\>g :cs find d <C-R>=expand("<cword>")<CR><CR>
     silent! map <unique> <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
     silent! map <unique> <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
     silent! map <unique> <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
@@ -153,15 +153,17 @@ function s:Cycle_csdb()
         "it is already loaded. don't try to reload it.
       endif
     endif
-    let newcsdbpath = s:Find_in_parent("cscope.out",s:windowdir(),$HOME)
-"    echo "Found cscope.out at: " . newcsdbpath
-"    echo "Windowdir: " . s:windowdir()
+    let newcsdbpath = s:Find_in_parent("GTAGS",s:windowdir(),$HOME)
+    "echom "Found cscope.out at: " . newcsdbpath
+    "echom "Windowdir: " . s:windowdir()
     if newcsdbpath != "Nothing"
       let b:csdbpath = newcsdbpath
       if !cscope_connection(3, "out", b:csdbpath)
         let save_csvb = &csverb
         set nocsverb
-        exe "cs add " . b:csdbpath . "/cscope.out " . b:csdbpath
+        " add b:csdbpath after exe when use cscope.out
+        ". b:csdbpath
+        exe "cs add " . b:csdbpath . "/GTAGS "
         set csverb
         let &csverb = save_csvb
       endif

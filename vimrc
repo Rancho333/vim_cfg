@@ -53,7 +53,8 @@ set encoding=utf-8
 "set autochdir
 "set tags=tags; 这两句产生的作用相同
 "还需要做一个自动生成tags的插件
-set tags=./.tags;,.tags
+"set tags=./.tags;,.tags
+set csprg=gtags-cscope
 
 "光标回到上次退出文件时的位置
 if has("autocmd")
