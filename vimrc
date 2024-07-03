@@ -141,6 +141,7 @@ let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airline_disable_statusline = 1
 " space+tab switch buffers one by one
 nmap <silent> <Leader><Tab> :bnext<cr>
+nmap <silent> <Leader>bd :bd<cr>
 
 "vim-plug management               "PlugInstall to install all plugins, PlugUpgrade to update all plugins
 call plug#begin('~/.vim/plugged')
