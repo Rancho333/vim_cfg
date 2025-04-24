@@ -30,7 +30,6 @@ set term=xterm
 autocmd vimenter * ++nested colorscheme gruvbox
 set bg=dark
 
-
 set cursorline
 "highlight Cursorline   cterm=NONE ctermbg=236
 highlight Cursorline   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
@@ -63,6 +62,11 @@ endif
 
 "define Leader as ;
 let mapleader=" "
+
+" shortcut key for vim buffer
+nmap <silent> <Leader>n :bnext<cr>
+nmap <silent> <Leader>p :bprev<cr>
+" :b num                           jump to num buffer 
 
 "define shortcut key to quit, write/quit, no-save/quit
 nmap <Leader>q :q<CR>
@@ -100,56 +104,39 @@ let NERDTreeWinPos="right"
 let NERDTreeShowBookmarks=1
 "autocmd VimEnter * NERDTree             "auto enable nerdtree when open file via vim
 
-"tagbar, * 打开所有folds, = 折叠所有folds
-nmap <silent> tb :TagbarToggle<CR>  
+"tagbar
+" * open all folds
+" = pack up all folds
+nmap <silent> tb :TagbarToggle<CR>
 let g:tagbar_left=1             "default on right
 let g:tagbar_width=30           "default width is 40
 let g:tagbar_autofocus=1        "cursor on tagbar when tagbar start
 let g:tagbar_sort=0             "default is sort
 
-"switch from c file and h file
+"vim-fswitc: switch from c file and h file
 nmap <silent> <Leader>sw :FSHere<CR>
 
-"LeaderF configuration
-"let g:Lf_ShortcutF = '<c-p>'
-let g:Lf_ShortcutB = '<m-n>'
-noremap <c-n> :LeaderfMru<cr>
-"display functions list in this file
-noremap <c-p> :LeaderfFunction!<cr>
-noremap <m-n> :LeaderfBuffer<cr>
-noremap <m-m> :LeaderfTag<cr>
-let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
-let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
-let g:Lf_WorkingDirectoryMode = 'Ac'
-let g:Lf_WindowHeight = 0.30
-let g:Lf_CacheDirectory = expand('~/.vim/cache')
-let g:Lf_ShowRelativePath = 0
-let g:Lf_HideHelp = 1
-let g:Lf_StlColorscheme = 'eleline'
-let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
-
-" ALE configuration
-"let g:ale_c_cc_executable = 'gcc'     " change c and c++ linter from clang to gcc
-"let g:ale_c_cc_options = '-I/home/rancho/workdir/questone2av2/q2av2-pr/src/sonic-frr/frr/lib'      " manually add header files PATH
-
-" AirLine configuration
-" diaplay tab line on the top :b buffer_number to change buffer
+" AirLine configuration  can display tabline and status line
+" diaplay tab line on the top
 let g:airline#extensions#tabline#enabled=1
 " display buffer sequences
 let g:airline#extensions#tabline#buffer_nr_show=1
 " disable status line at the button of window
 let g:airline_disable_statusline = 1
 " space+tab switch buffers one by one
-nmap <silent> <Leader><Tab> :bnext<cr>
-nmap <silent> <Leader>bd :bd<cr>
+
+"LeaderF configuration   using for fuzzy find
+"let g:Lf_StlSeparator = ''
+nnoremap <Leader>ff :Leaderf file<CR>
+let g:Lf_WindowPosition = 'popup'       " using pop module for Leaderf, otherwise status line will abnormal when co-work with tmux
 
 "vim-plug management               "PlugInstall to install all plugins, PlugUpgrade to update all plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-"switch from c file and h file
 Plug 'derekwyatt/vim-fswitch'
 Plug 'majutsushi/tagbar'
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+" color scheme
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 call plug#end()
