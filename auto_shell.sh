@@ -14,7 +14,7 @@ cp tmux.conf ~/.tmux.conf
 
 
 if [ ! -d ~/.local/bin ]; then
-    mkdir ~/.local/bin
+    mkdir -p ~/.local/bin
 fi
 
 cp global/* ~/.local/bin
