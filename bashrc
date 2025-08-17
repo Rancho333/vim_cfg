@@ -107,3 +107,4 @@ man() {
 }
 
 export PATH=$PATH:~/.local/bin
+export TERM=screen-256color
