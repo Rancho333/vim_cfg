@@ -12,11 +12,4 @@ cp bashrc ~/.bashrc
 
 cp tmux.conf ~/.tmux.conf
 
-
-if [ ! -d ~/.local/bin ]; then
-    mkdir -p ~/.local/bin
-fi
-
-cp global/* ~/.local/bin
-
 source  ~/.bashrc
