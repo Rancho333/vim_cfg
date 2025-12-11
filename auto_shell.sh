@@ -10,6 +10,8 @@ cp -r autoload/ ~/.vim; cp -r colors/ ~/.vim; cp -r plugin ~/.vim
 
 cp bashrc ~/.bashrc
 
+cp bash_profile ~/.bash_profile
+
 cp tmux.conf ~/.tmux.conf
 
 source  ~/.bashrc
